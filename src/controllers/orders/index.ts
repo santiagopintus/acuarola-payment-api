@@ -1,8 +1,5 @@
 import Order from "../../models/order.model";
 import { Request, Response, ErrorRequestHandler } from "express";
-import db from "../../db";
-
-console.log(db);
 
 /* Response to /orders route */
 const getOrders = async (
