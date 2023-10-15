@@ -7,16 +7,16 @@ import mercadopago from "mercadopago";
 dotenv.config();
 
 const mpToken =
-  process.env.stage === "production"
-    ? process.env.MP_TOKEN
-    : process.env.MP_TOKEN_TEST;
+  process.env.STAGE === "production"
+    ? process.env.MP_ACCESS_TOKEN
+    : process.env.MP_ACCESS_TOKEN_TEST;
 
 if (mpToken?.length) {
   mercadopago.configure({
     access_token: mpToken,
   });
 } else {
-  console.error("MP_TOKEN NOT FOUND");
+  console.error("MP_ACCESS_TOKEN NOT FOUND");
 }
 
 const app = express();
